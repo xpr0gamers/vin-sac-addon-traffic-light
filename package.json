@@ -1,4 +1,13 @@
 {
   "name": "sac-addon-traffic-light",
-  "packageManager": "yarn@4.9.2"
+  "packageManager": "yarn@4.9.2",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build:viz-plotarea-general": "vite build --config vite.viz-plotarea-general.config.ts",
+    "build:viz-plotarea-general-builder": "vite build --config vite.viz-plotarea-general-builder.config.ts",
+    "build:all": "npm run clean && npm run build:viz-plotarea-general && npm run build:viz-plotarea-general-builder"
+  },
+  "devDependencies": {
+    "vite": "^7.3.1"
+  }
 }
