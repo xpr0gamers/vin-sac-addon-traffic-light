@@ -1,6 +1,8 @@
 {
   "name": "sac-addon-traffic-light",
+  "version": "0.0.1",
   "packageManager": "yarn@4.9.2",
+  "type": "module",
   "scripts": {
     "clean": "rm -rf dist",
     "build-for-sac": "npx tsx ./tools/vite-build-all-for-sac.ts"

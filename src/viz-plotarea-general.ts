@@ -7,7 +7,6 @@ VizPlotareaGeneralContainerTemplate.innerHTML = `
                 width: 100%;
                 height: 100%;
                 position: relative;
-                background-color: grey;
             }
         </style>
         <div class="plotarea-overlay-container"/>
@@ -78,12 +77,15 @@ class VizPlotareaGeneral extends HTMLElement implements IAddOnComponent {
       // For demonstration purpose, we just add a traffic light for each series in the plot area
       for (const dataPoint of serie.dataPoints) {
         const { labelInfo } = dataPoint;
+
         const trafficLightElement = TrafficLightTemplate.content.cloneNode(
           true,
         ) as HTMLElement;
-        trafficLightElement.style.position = "absolute";
-        trafficLightElement.style.left = `${labelInfo.x}px`;
-        trafficLightElement.style.top = `${labelInfo.y}px`;
+
+        trafficLightElement.setAttribute(
+          "style",
+          `left: ${labelInfo.x}px; top: ${labelInfo.y}px; position: absolute;`,
+        );
 
         this.shadowRoot!.querySelector(
           ".plotarea-overlay-container",

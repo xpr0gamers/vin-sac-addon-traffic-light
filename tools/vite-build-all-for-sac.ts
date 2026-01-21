@@ -30,6 +30,7 @@ for (const target of TARGETS) {
       sourcemap: false,
       outDir: outDir,
       emptyOutDir: false,
+      minify: false,
       lib: {
         entry: [target.entry],
         name: target.name,
@@ -39,7 +40,7 @@ for (const target of TARGETS) {
         treeshake: false,
         output: {
           entryFileNames: "[name].js",
-          compact: true,
+          compact: false,
         },
       },
     },
@@ -60,12 +61,14 @@ const stringContentMainJson = fs.readFileSync(
     encoding: "utf-8",
   },
 );
-const contentMainJson = JSON.parse(stringContentMainJson);
 
+const contentMainJson = JSON.parse(stringContentMainJson);
 const outZip = new JSZip();
-for (const webComp of contentMainJson.webcomponents) {
-  const fileName = webComp.url.split("/").pop();
-  outZip.file(fileName, fs.readFileSync(path.resolve(outDir, fileName)));
+for (const extension of contentMainJson.extensions) {
+  for (const webComp of extension.webcomponents) {
+    const fileName = webComp.url.split("/").pop();
+    outZip.file(fileName, fs.readFileSync(path.resolve(outDir, fileName)));
+  }
 }
 
 outZip
@@ -78,7 +81,7 @@ outZip
   .pipe(fs.createWriteStream(path.resolve(outDir, "custom-widget.zip")));
 
 // delete individual files after zip creation
-for (const webComp of contentMainJson.webcomponents) {
-  const fileName = webComp.url.split("/").pop();
-  fs.rmSync(path.resolve(outDir, fileName));
-}
+// for (const webComp of contentMainJson.webcomponents) {
+//   const fileName = webComp.url.split("/").pop();
+//   fs.rmSync(path.resolve(outDir, fileName));
+// }
