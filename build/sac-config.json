@@ -1,0 +1,50 @@
+{
+    "id": "vin.chart.addon.trafficlight",
+    "version": "1.0.0",
+    "name": "Chart Traffic Light Add-on",
+    "description": "An add-on to display traffic light indicators on charts.",
+    "icon": "undefined",
+    "vendor": "vinomic GmbH",
+    "eula": "EULA",
+    "license": "1.0",
+    "extensions": [
+        {
+            "extensionPoint": "sap.addOn.viz.plotarea.general",
+            "webcomponents": [
+                {
+                    "kind": "main",
+                    "tag": "viz-plotarea-general",
+                    "url": "/viz-plotarea-general.js",
+                    "integrity": "",
+                    "ignoreIntegrity": true
+                }
+            ],
+            "properties": {
+                "sapHideOriginalDataPointLabels": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "sapHideOriginalDataPointMarks": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "sapHideOriginalXAxisLabels": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "sapHideOriginalYAxisLabels": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "sapHideOriginalXAxisStackLabels": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "sapHideOriginalYAxisStackLabels": {
+                    "type": "boolean",
+                    "default": false
+                }
+            }
+        }
+    ]
+}

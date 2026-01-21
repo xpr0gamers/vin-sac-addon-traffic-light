@@ -71,8 +71,6 @@ class VizPlotareaGeneral extends HTMLElement implements IAddOnComponent {
    * Render the plotarea of chart
    */
   public render(): void {
-    debugger;
-
     for (const serie of this.extensionData.series) {
       // For demonstration purpose, we just add a traffic light for each series in the plot area
       for (const dataPoint of serie.dataPoints) {
@@ -82,9 +80,13 @@ class VizPlotareaGeneral extends HTMLElement implements IAddOnComponent {
           true,
         ) as HTMLElement;
 
-        trafficLightElement.setAttribute(
+        const trafficLightContainer = trafficLightElement.querySelector(
+          ".traffic-light-container",
+        ) as HTMLElement;
+
+        trafficLightContainer.setAttribute(
           "style",
-          `left: ${labelInfo.x}px; top: ${labelInfo.y}px; position: absolute;`,
+          `left: ${labelInfo.x}px; top: ${labelInfo.y - 30}px; position: absolute;`,
         );
 
         this.shadowRoot!.querySelector(
