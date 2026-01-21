@@ -1,1 +1,1 @@
-(function(){"use strict";class n extends HTMLElement{setExtensionData(e){debugger}onBeforeUpdate(e){}onAfterUpdate(e){}render(){debugger}}customElements.define("viz-plotarea-general",n)})();
+(function(){"use strict";class t extends HTMLElement{setExtensionData(e){this.extensionData=e,this.render()}onBeforeUpdate(e){}onAfterUpdate(e){}render(){debugger}}customElements.define("viz-plotarea-general",t)})();

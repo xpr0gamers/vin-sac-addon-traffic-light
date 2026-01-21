@@ -22,11 +22,11 @@
             "properties": {
                 "sapHideOriginalDataPointLabels": {
                     "type": "boolean",
-                    "default": true
+                    "default": false
                 },
                 "sapHideOriginalDataPointMarks": {
                     "type": "boolean",
-                    "default": true
+                    "default": false
                 },
                 "sapHideOriginalXAxisLabels": {
                     "type": "boolean",
