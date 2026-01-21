@@ -1,7 +1,49 @@
 import { IAddOnComponent, IVizGeneralPlotareaExtensionData } from "types";
 
+const VizPlotareaGeneralContainerTemplate = document.createElement("template");
+VizPlotareaGeneralContainerTemplate.innerHTML = `
+        <style>
+            .plotarea-overlay-container {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                background-color: grey;
+            }
+        </style>
+        <div class="plotarea-overlay-container"/>
+    `;
+
+const TrafficLightTemplate = document.createElement("template");
+TrafficLightTemplate.innerHTML = `
+        <style>
+            .traffic-light-container {
+                width: 100%;
+                height: 100%;
+                position: relative;
+            }
+            .traffic-light {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: #e53935;
+                box-shadow: inset 0 0 8px rgba(0,0,0,.35);
+            }
+        </style>
+        <div class="traffic-light-container">
+            <div class="traffic-light" ></div>
+        </div>
+    `;
+
 class VizPlotareaGeneral extends HTMLElement implements IAddOnComponent {
   protected extensionData!: IVizGeneralPlotareaExtensionData;
+
+  public constructor() {
+    super();
+
+    this.attachShadow({ mode: "open" }).appendChild(
+      VizPlotareaGeneralContainerTemplate.content.cloneNode(true),
+    );
+  }
 
   /**
    * Called by SAC add-on extension framework to set exposed extension data to custom add-on component.
@@ -31,6 +73,23 @@ class VizPlotareaGeneral extends HTMLElement implements IAddOnComponent {
    */
   public render(): void {
     debugger;
+
+    for (const serie of this.extensionData.series) {
+      // For demonstration purpose, we just add a traffic light for each series in the plot area
+      for (const dataPoint of serie.dataPoints) {
+        const { labelInfo } = dataPoint;
+        const trafficLightElement = TrafficLightTemplate.content.cloneNode(
+          true,
+        ) as HTMLElement;
+        trafficLightElement.style.position = "absolute";
+        trafficLightElement.style.left = `${labelInfo.x}px`;
+        trafficLightElement.style.top = `${labelInfo.y}px`;
+
+        this.shadowRoot!.querySelector(
+          ".plotarea-overlay-container",
+        )!.appendChild(trafficLightElement);
+      }
+    }
   }
 }
 

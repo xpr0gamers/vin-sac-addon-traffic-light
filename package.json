@@ -3,11 +3,13 @@
   "packageManager": "yarn@4.9.2",
   "scripts": {
     "clean": "rm -rf dist",
-    "build:viz-plotarea-general": "vite build --config vite.viz-plotarea-general.config.ts",
-    "build:viz-plotarea-general-builder": "vite build --config vite.viz-plotarea-general-builder.config.ts",
-    "build:all": "npm run clean && npm run build:viz-plotarea-general && npm run build:viz-plotarea-general-builder"
+    "build-for-sac": "npx tsx ./tools/vite-build-all-for-sac.ts"
   },
   "devDependencies": {
+    "@types/node": "^25.0.9",
+    "jszip": "^3.10.1",
+    "terser": "^5.46.0",
+    "typescript": "^5.9.3",
     "vite": "^7.3.1"
   }
 }
