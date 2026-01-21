@@ -20,8 +20,8 @@
                 position: relative;
             }
             .traffic-light {
-                width: 40px;
-                height: 40px;
+                width: 30px;
+                height: 30px;
                 border-radius: 50%;
                 background: #e53935;
                 box-shadow: inset 0 0 8px rgba(0,0,0,.35);
@@ -62,7 +62,6 @@
      * Render the plotarea of chart
      */
     render() {
-      debugger;
       for (const serie of this.extensionData.series) {
         for (const dataPoint of serie.dataPoints) {
           const { labelInfo } = dataPoint;
@@ -74,8 +73,14 @@
           );
           trafficLightContainer.setAttribute(
             "style",
-            `left: ${labelInfo.x}px; top: ${labelInfo.y}px; position: absolute;`
+            `left: ${labelInfo.x}px; top: ${labelInfo.y - 30}px; position: absolute;`
           );
+          const trafficLight = trafficLightElement.querySelector(
+            ".traffic-light"
+          );
+          const colors = ["#e53935", "#fdd835", "#43a047"];
+          const randomColor = colors[Math.floor(Math.random() * colors.length)];
+          trafficLight.setAttribute("style", `background: ${randomColor};`);
           this.shadowRoot.querySelector(
             ".plotarea-overlay-container"
           ).appendChild(trafficLightElement);

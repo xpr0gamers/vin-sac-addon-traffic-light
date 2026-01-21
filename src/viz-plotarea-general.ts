@@ -21,8 +21,8 @@ TrafficLightTemplate.innerHTML = `
                 position: relative;
             }
             .traffic-light {
-                width: 40px;
-                height: 40px;
+                width: 30px;
+                height: 30px;
                 border-radius: 50%;
                 background: #e53935;
                 box-shadow: inset 0 0 8px rgba(0,0,0,.35);
@@ -88,6 +88,15 @@ class VizPlotareaGeneral extends HTMLElement implements IAddOnComponent {
           "style",
           `left: ${labelInfo.x}px; top: ${labelInfo.y - 30}px; position: absolute;`,
         );
+
+        const trafficLight = trafficLightElement.querySelector(
+          ".traffic-light",
+        ) as HTMLElement;
+
+        // set random traffic light color for demonstration purpose
+        const colors = ["#e53935", "#fdd835", "#43a047"];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        trafficLight.setAttribute("style", `background: ${randomColor};`);
 
         this.shadowRoot!.querySelector(
           ".plotarea-overlay-container",
