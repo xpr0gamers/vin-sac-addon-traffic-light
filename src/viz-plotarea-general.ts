@@ -71,7 +71,7 @@ class VizPlotareaGeneral extends HTMLElement implements IAddOnComponent {
     for (const serie of this.extensionData.series) {
       // For demonstration purpose, we just add a traffic light for each series in the plot area
       for (const dataPoint of serie.dataPoints) {
-        const { labelInfo, dataInfo } = dataPoint;
+        const { labelInfo } = dataPoint;
         const trafficLightSettings = {
           width: 20,
           height: 20,
@@ -88,7 +88,7 @@ class VizPlotareaGeneral extends HTMLElement implements IAddOnComponent {
         const left =
           labelInfo.x + labelInfo.width / 2 - trafficLightSettings.width / 2;
         const top =
-          labelInfo.y + labelInfo.height / 2 - trafficLightSettings.height / 2;
+          labelInfo.y - labelInfo.height - trafficLightSettings.height / 2;
         trafficLightContainer.setAttribute(
           "style",
           `left: ${left}px; top: ${top}px; position: absolute;`,
@@ -101,7 +101,10 @@ class VizPlotareaGeneral extends HTMLElement implements IAddOnComponent {
         // set random traffic light color for demonstration purpose
         const colors = ["#e53935", "#fdd835", "#43a047"];
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        trafficLight.setAttribute("style", `background: ${randomColor};`);
+        trafficLight.setAttribute(
+          "style",
+          `background: ${randomColor}; width: ${trafficLightSettings.width}px; height: ${trafficLightSettings.height}px;`,
+        );
 
         this.shadowRoot!.querySelector(
           ".plotarea-overlay-container",
