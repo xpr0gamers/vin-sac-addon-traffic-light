@@ -81,7 +81,11 @@ outZip
   .pipe(fs.createWriteStream(path.resolve(outDir, "custom-widget.zip")));
 
 // delete individual files after zip creation
-// for (const webComp of contentMainJson.webcomponents) {
-//   const fileName = webComp.url.split("/").pop();
-//   fs.rmSync(path.resolve(outDir, fileName));
-// }
+for (const extension of contentMainJson.extensions) {
+  for (const webComp of extension.webcomponents) {
+    const fileName = webComp.url.split("/").pop();
+    fs.rmSync(path.resolve(outDir, fileName));
+  }
+}
+
+console.log("Build completed.");
