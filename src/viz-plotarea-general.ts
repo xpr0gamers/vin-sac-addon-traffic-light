@@ -21,11 +21,8 @@ TrafficLightTemplate.innerHTML = `
                 position: relative;
             }
             .traffic-light {
-                width: 30px;
-                height: 30px;
                 border-radius: 50%;
                 background: #e53935;
-                box-shadow: inset 0 0 8px rgba(0,0,0,.35);
             }
         </style>
         <div class="traffic-light-container">
@@ -74,7 +71,11 @@ class VizPlotareaGeneral extends HTMLElement implements IAddOnComponent {
     for (const serie of this.extensionData.series) {
       // For demonstration purpose, we just add a traffic light for each series in the plot area
       for (const dataPoint of serie.dataPoints) {
-        const { labelInfo } = dataPoint;
+        const { labelInfo, dataInfo } = dataPoint;
+        const trafficLightSettings = {
+          width: 20,
+          height: 20,
+        };
 
         const trafficLightElement = TrafficLightTemplate.content.cloneNode(
           true,
@@ -84,9 +85,13 @@ class VizPlotareaGeneral extends HTMLElement implements IAddOnComponent {
           ".traffic-light-container",
         ) as HTMLElement;
 
+        const left =
+          labelInfo.x + labelInfo.width / 2 - trafficLightSettings.width / 2;
+        const top =
+          labelInfo.y + labelInfo.height / 2 - trafficLightSettings.height / 2;
         trafficLightContainer.setAttribute(
           "style",
-          `left: ${labelInfo.x}px; top: ${labelInfo.y - 30}px; position: absolute;`,
+          `left: ${left}px; top: ${top}px; position: absolute;`,
         );
 
         const trafficLight = trafficLightElement.querySelector(
