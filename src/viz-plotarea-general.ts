@@ -114,4 +114,4 @@ class VizPlotareaGeneral extends HTMLElement implements IAddOnComponent {
   }
 }
 
-customElements.define("viz-plotarea-general", VizPlotareaGeneral);
+customElements.define("tl-viz-plotarea-general", VizPlotareaGeneral);
