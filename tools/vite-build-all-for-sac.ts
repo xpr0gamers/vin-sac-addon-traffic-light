@@ -13,7 +13,10 @@ await fs.rmSync(outDir, { recursive: true, force: true });
 
 // Build
 const TARGETS = [
-  { entry: "src/viz-plotarea-general.ts", name: "viz-plotarea-general.js" },
+  {
+    entry: "src/tl-viz-plotarea-general.ts",
+    name: "tl-viz-plotarea-general.js",
+  },
   // { entry: "src/SacBuilder.ts", name: "vin-comment-widget-builder.js" },
   // { entry: "src/SacStyling.ts", name: "vin-comment-widget-styling.js" },
 ];
