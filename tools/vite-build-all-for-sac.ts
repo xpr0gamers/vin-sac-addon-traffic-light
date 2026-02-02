@@ -87,7 +87,7 @@ outZip
 for (const extension of contentMainJson.extensions) {
   for (const webComp of extension.webcomponents) {
     const fileName = webComp.url.split("/").pop();
-    fs.rmSync(path.resolve(outDir, fileName));
+    // fs.rmSync(path.resolve(outDir, fileName));
   }
 }
 
