@@ -1,0 +1,398 @@
+{
+    "chartType": "barcolumn",
+    "chartSize": {
+        "width": 804,
+        "height": 570
+    },
+    "isHorizontal": false,
+    "clipPath": {
+        "x": "137",
+        "y": 0,
+        "width": "540",
+        "height": 570
+    },
+    "series": [
+        {
+            "selected": false,
+            "name": "Sales",
+            "color": "#488CCC",
+            "dataPoints": [
+                {
+                    "dataInfo": {
+                        "x": 161,
+                        "y": 91,
+                        "width": 133,
+                        "height": 448,
+                        "type": "rect",
+                        "pointValue": [
+                            "904000000"
+                        ],
+                        "color": "rgba(72,140,204,0.2)",
+                        "borderColor": "rgba(72,140,204,0.2)",
+                        "selected": false,
+                        "opacity": null,
+                        "hidden": false,
+                        "outOfViewport": false
+                    },
+                    "labelInfo": {
+                        "x": 216,
+                        "y": 73,
+                        "width": 22.03125,
+                        "height": 16,
+                        "type": "text",
+                        "pointValue": 904000000,
+                        "formattedValue": "904",
+                        "color": "rgb(88, 89, 91)",
+                        "opacity": "1",
+                        "fontSize": "12px",
+                        "hidden": false,
+                        "outOfViewport": false,
+                        "containerOpacity": "0.2"
+                    },
+                    "category": {
+                        "name": "California",
+                        "parent": {}
+                    }
+                },
+                {
+                    "dataInfo": {
+                        "x": 341,
+                        "y": 166,
+                        "width": 133,
+                        "height": 373,
+                        "type": "rect",
+                        "pointValue": [
+                            "752000000"
+                        ],
+                        "color": "rgba(72,140,204,1)",
+                        "borderColor": "#3391d5",
+                        "selected": true,
+                        "opacity": null,
+                        "hidden": false,
+                        "outOfViewport": false
+                    },
+                    "labelInfo": {
+                        "x": 396,
+                        "y": 148,
+                        "width": 22.03125,
+                        "height": 16,
+                        "type": "text",
+                        "pointValue": 752000000,
+                        "formattedValue": "752",
+                        "color": "rgb(88, 89, 91)",
+                        "opacity": "1",
+                        "fontSize": "12px",
+                        "hidden": false,
+                        "outOfViewport": false,
+                        "containerOpacity": "1"
+                    },
+                    "category": {
+                        "name": "Oregon",
+                        "parent": {}
+                    }
+                },
+                {
+                    "dataInfo": {
+                        "x": 521,
+                        "y": 359,
+                        "width": 133,
+                        "height": 180,
+                        "type": "rect",
+                        "pointValue": [
+                            "360000000"
+                        ],
+                        "color": "rgba(72,140,204,0.2)",
+                        "borderColor": "rgba(72,140,204,0.2)",
+                        "selected": false,
+                        "opacity": null,
+                        "hidden": false,
+                        "outOfViewport": false
+                    },
+                    "labelInfo": {
+                        "x": 576,
+                        "y": 341,
+                        "width": 22.03125,
+                        "height": 16,
+                        "type": "text",
+                        "pointValue": 360000000,
+                        "formattedValue": "360",
+                        "color": "rgb(88, 89, 91)",
+                        "opacity": "1",
+                        "fontSize": "12px",
+                        "hidden": false,
+                        "outOfViewport": false,
+                        "containerOpacity": "0.2"
+                    },
+                    "category": {
+                        "name": "Texas",
+                        "parent": {}
+                    }
+                }
+            ],
+            "showAsTriangle": false,
+            "legendInfo": {
+                "label": {
+                    "x": 327,
+                    "y": 7,
+                    "width": 28.828125,
+                    "height": 14,
+                    "textStr": "Sales",
+                    "color": "#333333",
+                    "fontSize": "12px",
+                    "styles": {
+                        "fontFamily": "'72-Web', Arial, Helvetica, sans-serif",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                        "textDecoration": null,
+                        "textShadow": null
+                    }
+                },
+                "symbol": {
+                    "x": 306,
+                    "y": 7,
+                    "width": 16,
+                    "height": 12
+                },
+                "containerOpacity": "1"
+            }
+        },
+        {
+            "selected": false,
+            "name": "RED",
+            "color": "rgb(234,64,25)",
+            "dataPoints": [
+                {
+                    "dataInfo": {
+                        "x": 285.5,
+                        "y": 86,
+                        "width": 14,
+                        "height": 14,
+                        "type": "rect",
+                        "pointValue": [],
+                        "color": "rgba(234,64,25,0.2)",
+                        "borderColor": "rgba(234,64,25,0.2)",
+                        "selected": false,
+                        "opacity": null,
+                        "hidden": false,
+                        "outOfViewport": false
+                    },
+                    "category": {
+                        "name": "California",
+                        "parent": {}
+                    }
+                },
+                {
+                    "dataInfo": {
+                        "x": 465.5,
+                        "y": 160,
+                        "width": 14,
+                        "height": 14,
+                        "type": "rect",
+                        "pointValue": [],
+                        "color": "rgba(234,64,25,0.2)",
+                        "borderColor": "rgba(234,64,25,0.2)",
+                        "selected": false,
+                        "opacity": null,
+                        "hidden": false,
+                        "outOfViewport": false
+                    },
+                    "category": {
+                        "name": "Oregon",
+                        "parent": {}
+                    }
+                },
+                {
+                    "dataInfo": {
+                        "x": 645.5,
+                        "y": 368,
+                        "width": 14,
+                        "height": 14,
+                        "type": "rect",
+                        "pointValue": [],
+                        "color": "rgba(234,64,25,0.2)",
+                        "borderColor": "rgba(234,64,25,0.2)",
+                        "selected": false,
+                        "opacity": null,
+                        "hidden": false,
+                        "outOfViewport": false
+                    },
+                    "category": {
+                        "name": "Texas",
+                        "parent": {}
+                    }
+                }
+            ],
+            "showAsTriangle": true,
+            "legendInfo": {
+                "label": {
+                    "x": 396.828125,
+                    "y": 7,
+                    "width": 23.296875,
+                    "height": 14,
+                    "textStr": "RED",
+                    "color": "#333333",
+                    "fontSize": "12px",
+                    "styles": {
+                        "fontFamily": "'72-Web', Arial, Helvetica, sans-serif",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                        "textDecoration": null,
+                        "textShadow": null
+                    }
+                },
+                "symbol": {
+                    "x": 377.828125,
+                    "y": 9,
+                    "width": 12,
+                    "height": 12
+                },
+                "containerOpacity": "1"
+            }
+        },
+        {
+            "selected": false,
+            "name": "YELLOW",
+            "color": "rgb(249,252,50)",
+            "dataPoints": [
+                {
+                    "dataInfo": {
+                        "x": 285.5,
+                        "y": 85,
+                        "width": 14,
+                        "height": 14,
+                        "type": "rect",
+                        "pointValue": [],
+                        "color": "rgba(249,252,50,0.2)",
+                        "borderColor": "rgba(249,252,50,0.2)",
+                        "selected": false,
+                        "opacity": null,
+                        "hidden": false,
+                        "outOfViewport": false
+                    },
+                    "category": {
+                        "name": "California",
+                        "parent": {}
+                    }
+                },
+                {
+                    "dataInfo": {
+                        "x": 465.5,
+                        "y": 159,
+                        "width": 14,
+                        "height": 14,
+                        "type": "rect",
+                        "pointValue": [],
+                        "color": "rgba(249,252,50,0.2)",
+                        "borderColor": "rgba(249,252,50,0.2)",
+                        "selected": false,
+                        "opacity": null,
+                        "hidden": false,
+                        "outOfViewport": false
+                    },
+                    "category": {
+                        "name": "Oregon",
+                        "parent": {}
+                    }
+                },
+                {
+                    "dataInfo": {
+                        "x": 645.5,
+                        "y": 363,
+                        "width": 14,
+                        "height": 14,
+                        "type": "rect",
+                        "pointValue": [],
+                        "color": "rgba(249,252,50,0.2)",
+                        "borderColor": "rgba(249,252,50,0.2)",
+                        "selected": false,
+                        "opacity": null,
+                        "hidden": false,
+                        "outOfViewport": false
+                    },
+                    "category": {
+                        "name": "Texas",
+                        "parent": {}
+                    }
+                }
+            ],
+            "showAsTriangle": true,
+            "legendInfo": {
+                "label": {
+                    "x": 461.125,
+                    "y": 7,
+                    "width": 46.28125,
+                    "height": 14,
+                    "textStr": "YELLOW",
+                    "color": "#333333",
+                    "fontSize": "12px",
+                    "styles": {
+                        "fontFamily": "'72-Web', Arial, Helvetica, sans-serif",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                        "textDecoration": null,
+                        "textShadow": null
+                    }
+                },
+                "symbol": {
+                    "x": 442.125,
+                    "y": 9,
+                    "width": 12,
+                    "height": 12
+                },
+                "containerOpacity": "1"
+            }
+        }
+    ],
+    "xAxisLabels": [
+        [
+            {
+                "x": 198.703125,
+                "y": 545,
+                "width": 56.59375,
+                "height": 17,
+                "pointValue": "California",
+                "formattedValue": "California",
+                "color": "rgb(166, 168, 171)",
+                "opacity": "1",
+                "fontSize": "13px"
+            },
+            {
+                "x": 384.890625,
+                "y": 545,
+                "width": 44.21875,
+                "height": 17,
+                "pointValue": "Oregon",
+                "formattedValue": "Oregon",
+                "color": "rgb(166, 168, 171)",
+                "opacity": "1",
+                "fontSize": "13px"
+            },
+            {
+                "x": 569.78125,
+                "y": 545,
+                "width": 34.4375,
+                "height": 17,
+                "pointValue": "Texas",
+                "formattedValue": "Texas",
+                "color": "rgb(166, 168, 171)",
+                "opacity": "1",
+                "fontSize": "13px"
+            }
+        ]
+    ],
+    "yAxisLabels": [
+        []
+    ],
+    "xAxisStackLabels": [
+        []
+    ],
+    "yAxisStackLabels": [
+        []
+    ],
+    "legendContainer": {
+        "x": 306,
+        "y": 7,
+        "width": 201.40625,
+        "height": 14
+    }
+}
