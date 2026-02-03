@@ -14,7 +14,7 @@
                 {
                     "kind": "main",
                     "tag": "tl-viz-plotarea-general",
-                    "url": "https://github.com/xpr0gamers/vin-sac-addon-traffic-light/blob/main/build/tl-viz-plotarea-general.js",
+                    "url": "/tl-viz-plotarea-general.js",
                     "integrity": "",
                     "ignoreIntegrity": true
                 }
