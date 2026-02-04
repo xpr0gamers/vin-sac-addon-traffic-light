@@ -147,10 +147,41 @@ class VizPlotareaGeneral extends HTMLElement implements IAddOnComponent {
         ".traffic-light",
       ) as HTMLElement;
 
+      const pointValue = dataPoint.dataInfo.pointValue;
+      const redThresholdValue = dataPointRedThreshold.dataInfo.pointValue;
+      const greenThresholdValue = dataPointGreenThreshold.dataInfo.pointValue;
+      /*
+       * Fallback logic for missing threshold values:
+       * In the fixtures, `pointValue` for threshold series can be missing.
+       * To keep the traffic-light decision deterministic, we fall back to the
+       * Y pixel coordinate from `dataInfo` as a substitute.
+       * Since the Y-axis grows downward (smaller Y = higher value), we invert
+       * the Y position relative to the plotarea height.
+       * This preserves the same comparison direction as the numeric value logic.
+       */
+      const useYCoordinateFallback =
+        !Number.isFinite(pointValue) ||
+        !Number.isFinite(redThresholdValue) ||
+        !Number.isFinite(greenThresholdValue);
+
+      const toValue = (y: number): number =>
+        this.extensionData.clipPath.height -
+        (y - this.extensionData.clipPath.y);
+
+      const resolvedPointValue = useYCoordinateFallback
+        ? toValue(dataPoint.dataInfo.y)
+        : pointValue;
+      const resolvedRedThresholdValue = useYCoordinateFallback
+        ? toValue(dataPointRedThreshold.dataInfo.y)
+        : redThresholdValue;
+      const resolvedGreenThresholdValue = useYCoordinateFallback
+        ? toValue(dataPointGreenThreshold.dataInfo.y)
+        : greenThresholdValue;
+
       const color = this.resolveTrafficLightColor(
-        dataPoint.dataInfo.pointValue,
-        dataPointRedThreshold.dataInfo.pointValue,
-        dataPointGreenThreshold.dataInfo.pointValue,
+        resolvedPointValue,
+        resolvedRedThresholdValue,
+        resolvedGreenThresholdValue,
         TRAFFIC_LIGHT_SETTINGS,
       );
 

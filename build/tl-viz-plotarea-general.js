@@ -107,10 +107,18 @@
         const trafficLight = trafficLightElement.querySelector(
           ".traffic-light"
         );
+        const pointValue = dataPoint.dataInfo.pointValue;
+        const redThresholdValue = dataPointRedThreshold.dataInfo.pointValue;
+        const greenThresholdValue = dataPointGreenThreshold.dataInfo.pointValue;
+        const useYCoordinateFallback = !Number.isFinite(pointValue) || !Number.isFinite(redThresholdValue) || !Number.isFinite(greenThresholdValue);
+        const toValue = (y) => this.extensionData.clipPath.height - (y - this.extensionData.clipPath.y);
+        const resolvedPointValue = useYCoordinateFallback ? toValue(dataPoint.dataInfo.y) : pointValue;
+        const resolvedRedThresholdValue = useYCoordinateFallback ? toValue(dataPointRedThreshold.dataInfo.y) : redThresholdValue;
+        const resolvedGreenThresholdValue = useYCoordinateFallback ? toValue(dataPointGreenThreshold.dataInfo.y) : greenThresholdValue;
         const color = this.resolveTrafficLightColor(
-          dataPoint.dataInfo.pointValue,
-          dataPointRedThreshold.dataInfo.pointValue,
-          dataPointGreenThreshold.dataInfo.pointValue,
+          resolvedPointValue,
+          resolvedRedThresholdValue,
+          resolvedGreenThresholdValue,
           TRAFFIC_LIGHT_SETTINGS
         );
         trafficLight.setAttribute(
