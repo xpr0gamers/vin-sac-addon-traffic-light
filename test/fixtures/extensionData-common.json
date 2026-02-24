@@ -14,6 +14,232 @@
     "series": [
         {
             "selected": false,
+            "name": "Yellow",
+            "color": "rgb(214,229,6)",
+            "dataPoints": [
+                {
+                    "dataInfo": {
+                        "x": 172.5,
+                        "y": 114,
+                        "width": 14,
+                        "height": 14,
+                        "type": "rect",
+                        "pointValue": [],
+                        "color": "rgba(214,229,6,0.2)",
+                        "borderColor": "rgba(214,229,6,0.2)",
+                        "selected": false,
+                        "opacity": null,
+                        "hidden": false,
+                        "outOfViewport": false
+                    },
+                    "category": {
+                        "name": "Even Better",
+                        "parent": {}
+                    }
+                },
+                {
+                    "dataInfo": {
+                        "x": 368.5,
+                        "y": 114,
+                        "width": 14,
+                        "height": 14,
+                        "type": "rect",
+                        "pointValue": [],
+                        "color": "rgba(214,229,6,0.2)",
+                        "borderColor": "rgba(214,229,6,0.2)",
+                        "selected": false,
+                        "opacity": null,
+                        "hidden": false,
+                        "outOfViewport": false
+                    },
+                    "category": {
+                        "name": "Hermanos",
+                        "parent": {}
+                    }
+                },
+                {
+                    "dataInfo": {
+                        "x": 565.5,
+                        "y": 114,
+                        "width": 14,
+                        "height": 14,
+                        "type": "rect",
+                        "pointValue": [],
+                        "color": "rgba(214,229,6,0.2)",
+                        "borderColor": "rgba(214,229,6,0.2)",
+                        "selected": false,
+                        "opacity": null,
+                        "hidden": false,
+                        "outOfViewport": false
+                    },
+                    "category": {
+                        "name": "Jumbo",
+                        "parent": {}
+                    }
+                },
+                {
+                    "dataInfo": {
+                        "x": 761.5,
+                        "y": 114,
+                        "width": 14,
+                        "height": 14,
+                        "type": "rect",
+                        "pointValue": [],
+                        "color": "rgba(214,229,6,0.2)",
+                        "borderColor": "rgba(214,229,6,0.2)",
+                        "selected": false,
+                        "opacity": null,
+                        "hidden": false,
+                        "outOfViewport": false
+                    },
+                    "category": {
+                        "name": "Sunset",
+                        "parent": {}
+                    }
+                }
+            ],
+            "showAsTriangle": true,
+            "legendInfo": {
+                "label": {
+                    "x": 465.375,
+                    "y": 7,
+                    "width": 34.41796875,
+                    "height": 14,
+                    "textStr": "Yellow",
+                    "color": "#333333",
+                    "fontSize": "12px",
+                    "styles": {
+                        "fontFamily": "'72-Web', Arial, Helvetica, sans-serif",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                        "textDecoration": null,
+                        "textShadow": null
+                    }
+                },
+                "symbol": {
+                    "x": 446.375,
+                    "y": 9,
+                    "width": 12,
+                    "height": 12
+                },
+                "containerOpacity": "1"
+            }
+        },
+        {
+            "selected": false,
+            "name": "RED",
+            "color": "rgb(255,0,0)",
+            "dataPoints": [
+                {
+                    "dataInfo": {
+                        "x": 172.5,
+                        "y": 329,
+                        "width": 14,
+                        "height": 14,
+                        "type": "rect",
+                        "pointValue": [],
+                        "color": "rgba(255,0,0,0.2)",
+                        "borderColor": "rgba(255,0,0,0.2)",
+                        "selected": false,
+                        "opacity": null,
+                        "hidden": false,
+                        "outOfViewport": false
+                    },
+                    "category": {
+                        "name": "Even Better",
+                        "parent": {}
+                    }
+                },
+                {
+                    "dataInfo": {
+                        "x": 368.5,
+                        "y": 329,
+                        "width": 14,
+                        "height": 14,
+                        "type": "rect",
+                        "pointValue": [],
+                        "color": "rgba(255,0,0,0.2)",
+                        "borderColor": "rgba(255,0,0,0.2)",
+                        "selected": false,
+                        "opacity": null,
+                        "hidden": false,
+                        "outOfViewport": false
+                    },
+                    "category": {
+                        "name": "Hermanos",
+                        "parent": {}
+                    }
+                },
+                {
+                    "dataInfo": {
+                        "x": 565.5,
+                        "y": 329,
+                        "width": 14,
+                        "height": 14,
+                        "type": "rect",
+                        "pointValue": [],
+                        "color": "rgba(255,0,0,0.2)",
+                        "borderColor": "rgba(255,0,0,0.2)",
+                        "selected": false,
+                        "opacity": null,
+                        "hidden": false,
+                        "outOfViewport": false
+                    },
+                    "category": {
+                        "name": "Jumbo",
+                        "parent": {}
+                    }
+                },
+                {
+                    "dataInfo": {
+                        "x": 761.5,
+                        "y": 329,
+                        "width": 14,
+                        "height": 14,
+                        "type": "rect",
+                        "pointValue": [],
+                        "color": "rgba(255,0,0,0.2)",
+                        "borderColor": "rgba(255,0,0,0.2)",
+                        "selected": false,
+                        "opacity": null,
+                        "hidden": false,
+                        "outOfViewport": false
+                    },
+                    "category": {
+                        "name": "Sunset",
+                        "parent": {}
+                    }
+                }
+            ],
+            "showAsTriangle": true,
+            "legendInfo": {
+                "label": {
+                    "x": 399.03125,
+                    "y": 7,
+                    "width": 23.296875,
+                    "height": 14,
+                    "textStr": "RED",
+                    "color": "#333333",
+                    "fontSize": "12px",
+                    "styles": {
+                        "fontFamily": "'72-Web', Arial, Helvetica, sans-serif",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                        "textDecoration": null,
+                        "textShadow": null
+                    }
+                },
+                "symbol": {
+                    "x": 380.03125,
+                    "y": 9,
+                    "width": 12,
+                    "height": 12
+                },
+                "containerOpacity": "1"
+            }
+        },
+        {
+            "selected": false,
             "name": "Sales",
             "color": "rgb(117,117,117)",
             "dataPoints": [
@@ -188,232 +414,6 @@
                     "x": 307,
                     "y": 7,
                     "width": 16,
-                    "height": 12
-                },
-                "containerOpacity": "1"
-            }
-        },
-        {
-            "selected": false,
-            "name": "RED",
-            "color": "rgb(255,0,0)",
-            "dataPoints": [
-                {
-                    "dataInfo": {
-                        "x": 172.5,
-                        "y": 329,
-                        "width": 14,
-                        "height": 14,
-                        "type": "rect",
-                        "pointValue": [],
-                        "color": "rgba(255,0,0,0.2)",
-                        "borderColor": "rgba(255,0,0,0.2)",
-                        "selected": false,
-                        "opacity": null,
-                        "hidden": false,
-                        "outOfViewport": false
-                    },
-                    "category": {
-                        "name": "Even Better",
-                        "parent": {}
-                    }
-                },
-                {
-                    "dataInfo": {
-                        "x": 368.5,
-                        "y": 329,
-                        "width": 14,
-                        "height": 14,
-                        "type": "rect",
-                        "pointValue": [],
-                        "color": "rgba(255,0,0,0.2)",
-                        "borderColor": "rgba(255,0,0,0.2)",
-                        "selected": false,
-                        "opacity": null,
-                        "hidden": false,
-                        "outOfViewport": false
-                    },
-                    "category": {
-                        "name": "Hermanos",
-                        "parent": {}
-                    }
-                },
-                {
-                    "dataInfo": {
-                        "x": 565.5,
-                        "y": 329,
-                        "width": 14,
-                        "height": 14,
-                        "type": "rect",
-                        "pointValue": [],
-                        "color": "rgba(255,0,0,0.2)",
-                        "borderColor": "rgba(255,0,0,0.2)",
-                        "selected": false,
-                        "opacity": null,
-                        "hidden": false,
-                        "outOfViewport": false
-                    },
-                    "category": {
-                        "name": "Jumbo",
-                        "parent": {}
-                    }
-                },
-                {
-                    "dataInfo": {
-                        "x": 761.5,
-                        "y": 329,
-                        "width": 14,
-                        "height": 14,
-                        "type": "rect",
-                        "pointValue": [],
-                        "color": "rgba(255,0,0,0.2)",
-                        "borderColor": "rgba(255,0,0,0.2)",
-                        "selected": false,
-                        "opacity": null,
-                        "hidden": false,
-                        "outOfViewport": false
-                    },
-                    "category": {
-                        "name": "Sunset",
-                        "parent": {}
-                    }
-                }
-            ],
-            "showAsTriangle": true,
-            "legendInfo": {
-                "label": {
-                    "x": 399.03125,
-                    "y": 7,
-                    "width": 23.296875,
-                    "height": 14,
-                    "textStr": "RED",
-                    "color": "#333333",
-                    "fontSize": "12px",
-                    "styles": {
-                        "fontFamily": "'72-Web', Arial, Helvetica, sans-serif",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                        "textDecoration": null,
-                        "textShadow": null
-                    }
-                },
-                "symbol": {
-                    "x": 380.03125,
-                    "y": 9,
-                    "width": 12,
-                    "height": 12
-                },
-                "containerOpacity": "1"
-            }
-        },
-        {
-            "selected": false,
-            "name": "Yellow",
-            "color": "rgb(214,229,6)",
-            "dataPoints": [
-                {
-                    "dataInfo": {
-                        "x": 172.5,
-                        "y": 114,
-                        "width": 14,
-                        "height": 14,
-                        "type": "rect",
-                        "pointValue": [],
-                        "color": "rgba(214,229,6,0.2)",
-                        "borderColor": "rgba(214,229,6,0.2)",
-                        "selected": false,
-                        "opacity": null,
-                        "hidden": false,
-                        "outOfViewport": false
-                    },
-                    "category": {
-                        "name": "Even Better",
-                        "parent": {}
-                    }
-                },
-                {
-                    "dataInfo": {
-                        "x": 368.5,
-                        "y": 114,
-                        "width": 14,
-                        "height": 14,
-                        "type": "rect",
-                        "pointValue": [],
-                        "color": "rgba(214,229,6,0.2)",
-                        "borderColor": "rgba(214,229,6,0.2)",
-                        "selected": false,
-                        "opacity": null,
-                        "hidden": false,
-                        "outOfViewport": false
-                    },
-                    "category": {
-                        "name": "Hermanos",
-                        "parent": {}
-                    }
-                },
-                {
-                    "dataInfo": {
-                        "x": 565.5,
-                        "y": 114,
-                        "width": 14,
-                        "height": 14,
-                        "type": "rect",
-                        "pointValue": [],
-                        "color": "rgba(214,229,6,0.2)",
-                        "borderColor": "rgba(214,229,6,0.2)",
-                        "selected": false,
-                        "opacity": null,
-                        "hidden": false,
-                        "outOfViewport": false
-                    },
-                    "category": {
-                        "name": "Jumbo",
-                        "parent": {}
-                    }
-                },
-                {
-                    "dataInfo": {
-                        "x": 761.5,
-                        "y": 114,
-                        "width": 14,
-                        "height": 14,
-                        "type": "rect",
-                        "pointValue": [],
-                        "color": "rgba(214,229,6,0.2)",
-                        "borderColor": "rgba(214,229,6,0.2)",
-                        "selected": false,
-                        "opacity": null,
-                        "hidden": false,
-                        "outOfViewport": false
-                    },
-                    "category": {
-                        "name": "Sunset",
-                        "parent": {}
-                    }
-                }
-            ],
-            "showAsTriangle": true,
-            "legendInfo": {
-                "label": {
-                    "x": 465.375,
-                    "y": 7,
-                    "width": 34.41796875,
-                    "height": 14,
-                    "textStr": "Yellow",
-                    "color": "#333333",
-                    "fontSize": "12px",
-                    "styles": {
-                        "fontFamily": "'72-Web', Arial, Helvetica, sans-serif",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                        "textDecoration": null,
-                        "textShadow": null
-                    }
-                },
-                "symbol": {
-                    "x": 446.375,
-                    "y": 9,
-                    "width": 12,
                     "height": 12
                 },
                 "containerOpacity": "1"

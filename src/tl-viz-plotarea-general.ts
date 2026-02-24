@@ -30,6 +30,25 @@ TrafficLightTemplate.innerHTML = `
         </div>
     `;
 
+/**
+ * VizPlotareaGeneral
+ *
+ * Custom Web Component that renders traffic light indicators over the SAC chart plotarea.
+ * It overlays a colored circle (red / yellow / green) above each data point to signal
+ * whether the metric (e.g. Sales) meets, exceeds, or falls below defined thresholds.
+ *
+ * Expects exactly three data series from SAC:
+ *   - Series 0: yellow/green threshold (upper limit)
+ *   - Series 1: red threshold (lower limit)
+ *   - Series 2: the metric values (e.g. Sales)
+ *
+ * Color rules:
+ *   - GREEN  → metric value is above the green threshold
+ *   - YELLOW → metric value is between red and green thresholds (within limits)
+ *   - RED    → metric value is below the red threshold
+ *
+ * Falls back to Y-pixel-coordinate comparison when numeric values are unavailable.
+ */
 class VizPlotareaGeneral extends HTMLElement implements IAddOnComponent {
   protected extensionData!: IVizGeneralPlotareaExtensionData;
 
@@ -64,6 +83,33 @@ class VizPlotareaGeneral extends HTMLElement implements IAddOnComponent {
    */
   public onAfterUpdate?(changedProps: any): void {}
 
+  /**
+   * Extracts a numeric point value from `dataInfo.pointValue`.
+   * SAC sends this field as a string array (e.g. `["904000000"]`); an empty array
+   * or a missing value signals that no numeric data is available and NaN is returned,
+   * which will trigger the Y-coordinate fallback in the caller.
+   */
+  private extractPointValue(rawValue: unknown): number {
+    if (Array.isArray(rawValue)) {
+      return rawValue.length > 0 ? parseFloat(rawValue[0]) : NaN;
+    }
+    return typeof rawValue === "number" ? rawValue : NaN;
+  }
+
+  /**
+   * Resolves the traffic light color for a single data point based on threshold comparison.
+   *
+   * @param pointValue - The actual metric value (e.g. Sales figure)
+   * @param redThreshold - The lower boundary; values below this are critical (RED)
+   * @param greenThreshold - The upper boundary; values above this are good (GREEN)
+   * @param colors - Object containing hex color strings for each traffic light state
+   * @returns The hex color string for the resolved traffic light state
+   *
+   * Color decision logic:
+   *   pointValue > greenThreshold  → GREEN  (above upper limit: target exceeded)
+   *   pointValue > redThreshold    → YELLOW (within limits: acceptable range)
+   *   otherwise                    → RED    (below lower limit: critical)
+   */
   protected resolveTrafficLightColor(
     pointValue: number,
     redThreshold: number,
@@ -102,14 +148,14 @@ class VizPlotareaGeneral extends HTMLElement implements IAddOnComponent {
       return;
     }
 
-    // first serie is the serie with values
-    const valueSerie = this.extensionData.series[0];
+    // first serie is the yellow/green threshold (upper limit)
+    const greenThresholdSerie = this.extensionData.series[0];
 
-    // second serie is the serie with red threshold
+    // second serie is the red threshold (lower limit)
     const redThresholdSerie = this.extensionData.series[1];
 
-    // third serie is the serie with green threshold
-    const greenThresholdSerie = this.extensionData.series[2];
+    // third serie is the metric series (e.g. Sales)
+    const valueSerie = this.extensionData.series[2];
 
     const TRAFFIC_LIGHT_SETTINGS = {
       width: 20,
@@ -147,9 +193,9 @@ class VizPlotareaGeneral extends HTMLElement implements IAddOnComponent {
         ".traffic-light",
       ) as HTMLElement;
 
-      const pointValue = dataPoint.dataInfo.pointValue;
-      const redThresholdValue = dataPointRedThreshold.dataInfo.pointValue;
-      const greenThresholdValue = dataPointGreenThreshold.dataInfo.pointValue;
+      const pointValue = this.extractPointValue(dataPoint.dataInfo.pointValue);
+      const redThresholdValue = this.extractPointValue(dataPointRedThreshold.dataInfo.pointValue);
+      const greenThresholdValue = this.extractPointValue(dataPointGreenThreshold.dataInfo.pointValue);
       /*
        * Fallback logic for missing threshold values:
        * In the fixtures, `pointValue` for threshold series can be missing.
