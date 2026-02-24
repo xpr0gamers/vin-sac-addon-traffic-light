@@ -55,6 +55,32 @@
      */
     onAfterUpdate(changedProps) {
     }
+    /**
+     * Extracts a numeric point value from `dataInfo.pointValue`.
+     * SAC sends this field as a string array (e.g. `["904000000"]`); an empty array
+     * or a missing value signals that no numeric data is available and NaN is returned,
+     * which will trigger the Y-coordinate fallback in the caller.
+     */
+    extractPointValue(rawValue) {
+      if (Array.isArray(rawValue)) {
+        return rawValue.length > 0 ? parseFloat(rawValue[0]) : NaN;
+      }
+      return typeof rawValue === "number" ? rawValue : NaN;
+    }
+    /**
+     * Resolves the traffic light color for a single data point based on threshold comparison.
+     *
+     * @param pointValue - The actual metric value (e.g. Sales figure)
+     * @param redThreshold - The lower boundary; values below this are critical (RED)
+     * @param greenThreshold - The upper boundary; values above this are good (GREEN)
+     * @param colors - Object containing hex color strings for each traffic light state
+     * @returns The hex color string for the resolved traffic light state
+     *
+     * Color decision logic:
+     *   pointValue > greenThreshold  → GREEN  (above upper limit: target exceeded)
+     *   pointValue > redThreshold    → YELLOW (within limits: acceptable range)
+     *   otherwise                    → RED    (below lower limit: critical)
+     */
     resolveTrafficLightColor(pointValue, redThreshold, greenThreshold, colors) {
       if (pointValue > greenThreshold) {
         return colors.color_green;
@@ -77,9 +103,9 @@
       if (this.extensionData.series.length != 3) {
         return;
       }
-      const valueSerie = this.extensionData.series[0];
+      const greenThresholdSerie = this.extensionData.series[0];
       const redThresholdSerie = this.extensionData.series[1];
-      const greenThresholdSerie = this.extensionData.series[2];
+      const valueSerie = this.extensionData.series[2];
       const TRAFFIC_LIGHT_SETTINGS = {
         width: 20,
         height: 20,
@@ -107,9 +133,9 @@
         const trafficLight = trafficLightElement.querySelector(
           ".traffic-light"
         );
-        const pointValue = dataPoint.dataInfo.pointValue;
-        const redThresholdValue = dataPointRedThreshold.dataInfo.pointValue;
-        const greenThresholdValue = dataPointGreenThreshold.dataInfo.pointValue;
+        const pointValue = this.extractPointValue(dataPoint.dataInfo.pointValue);
+        const redThresholdValue = this.extractPointValue(dataPointRedThreshold.dataInfo.pointValue);
+        const greenThresholdValue = this.extractPointValue(dataPointGreenThreshold.dataInfo.pointValue);
         const useYCoordinateFallback = !Number.isFinite(pointValue) || !Number.isFinite(redThresholdValue) || !Number.isFinite(greenThresholdValue);
         const toValue = (y) => this.extensionData.clipPath.height - (y - this.extensionData.clipPath.y);
         const resolvedPointValue = useYCoordinateFallback ? toValue(dataPoint.dataInfo.y) : pointValue;
