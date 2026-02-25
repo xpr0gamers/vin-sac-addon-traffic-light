@@ -117,7 +117,7 @@
         const dataPoint = valueSerie.dataPoints[index];
         const dataPointRedThreshold = redThresholdSerie.dataPoints[index];
         const dataPointGreenThreshold = greenThresholdSerie.dataPoints[index];
-        const { labelInfo } = dataPoint;
+        const labelInfo = Array.isArray(dataPoint.labelInfo) ? dataPoint.labelInfo[0] : dataPoint.labelInfo;
         const trafficLightElement = TrafficLightTemplate.content.cloneNode(
           true
         );
