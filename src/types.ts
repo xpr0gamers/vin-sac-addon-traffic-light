@@ -148,7 +148,7 @@ export interface IDataPoint {
   /**
    * Provide data label layout information of current data point;
    */
-  labelInfo: ILabelInfo;
+  labelInfo: ILabelInfo | ILabelInfo[];
 }
 
 export interface IDataInfo extends IRectWithValue {
